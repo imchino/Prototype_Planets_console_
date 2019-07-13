@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='macos' display-mode='raw'>
+    <pages>
+        <page name='Contents Table'/>
+        <page name='page1'/>
+        <page name='page2'/>
+        <page name='page3'/>
+        <page name='page4'/>
+        <page name='page5'/>
+        <page name='page6'/>
+        <page name='page7'/>
+    </pages>
+</playground>
