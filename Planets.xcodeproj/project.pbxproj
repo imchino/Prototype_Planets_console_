@@ -26,6 +26,7 @@
 		A47C91EC22D8A21300D9B3F2 /* Planets */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Planets; sourceTree = BUILT_PRODUCTS_DIR; };
 		A47C91EF22D8A21300D9B3F2 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		A47C91F722D8A5EF00D9B3F2 /* Lesson1.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Lesson1.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		A4FA88F122DA486D00F10447 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +43,7 @@
 		A47C91E322D8A21300D9B3F2 = {
 			isa = PBXGroup;
 			children = (
+				A4FA88F122DA486D00F10447 /* README.md */,
 				A47C91EE22D8A21300D9B3F2 /* Planets */,
 				A47C91ED22D8A21300D9B3F2 /* Products */,
 				A47C91F722D8A5EF00D9B3F2 /* Lesson1.playground */,
