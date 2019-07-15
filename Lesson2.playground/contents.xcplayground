@@ -6,5 +6,9 @@
         <page name='page2'/>
         <page name='page3'/>
         <page name='page4'/>
+        <page name='page5'/>
+        <page name='page6'/>
+        <page name='page7'/>
+        <page name='page8'/>
     </pages>
 </playground>
