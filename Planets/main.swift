@@ -10,6 +10,13 @@ import Foundation
 
 print("This is planets App.")
 
+// TODO: Agenda4
+// 既存コードより上部で、GalaxyKnowledgeオブジェクトを初期化する
+/*
+ let galaxyKnowledge = GalaxyKnowledge() 
+ */
+let galaxyknowledge = GalaxyKnowledge()
+
 let numberOfPlanets = 8
 let diameterOfEarth = 12756.274 // In km.
 print("There are \(numberOfPlanets) planets in the sorlar system.")
@@ -37,47 +44,78 @@ while isInvalidInput {
     }
 }
 
+// TODO: Agenda8
+// GalaxyKnowledgeオブジェクトに対するメソッド呼び出しを追加する
 /*
- Discuss the existing code in main.swift, and how the program is intended to be about a "space adventure," yet there is no "space adventure" in our code.
-
- Discuss the need to model what happens during the space adventure, such as greeting the travelers, asking them what planets they want to travel to, and then traveling to the planets.
-
- Discuss how Swift is an object-oriented language, and how one uses classes to define objects a program can use to model the concept of a space adventure.
-
- 
- Add a new Swift file (⌘N) called SpaceAdventure.swift.
- Be sure that the SpaceAdventure group is selected, and that the SpaceAdventure target is checked.
- 
- Using the Project Navigator (⌘1),
- observe that Xcode displays the new file within the SpaceAdventure group.
-
- Explain the convention of using an individual file to contain a single class definition, and how the file name (SpaceAdventure.swift) alludes to the name of the class it contains.
- Discuss how, at a high level of thinking, the code in main.swift has just two jobs: to create a SpaceAdventure object, and to start the adventure.
-
- Above the existing code within main.swift, instantiate a SpaceAdventure object.
- import Foundation
- let adventure = SpaceAdventure() 
- let numberOfPlanets=8
- ...
- 
- Observe the errors in the Xcode editor.
- Discuss how we have yet to write the SpaceAdventure class definition, and therefore cannot create a SpaceAdventure object.
-
- Using the Project Navigator (⌘1), select SpaceAdventure.swift
- Implement a basic class definition.
- class SpaceAdventure {  
- }
- 
-
- Explain the class definition syntax, and the UpperCamelCase convention for class names.
- Return to main.swift.
- Observe that the error notice disappears.
-
- Discuss object instantiation syntax.
- Discuss how one might call a method upon a SpaceAdventure object, telling it to start.
-
- Add a method call using the SpaceAdventure object.
- adventure.start()
- 
- Observe the error notice in the Xcode editor.
+ galaxyKnowledge.search()
  */
+galaxyknowledge.search()
+
+
+// MARK: Agenda1
+// main.swift の既存コードを考察する
+// 現時点でコードに「宇宙の冒険」はないが、プログラムが「宇宙の冒険」についてのものであることをどのように意図しているかを考察する
+// スペースアドベンチャーの間に起こりうることをモデルする必要性を考察する
+//  旅行者に挨拶する
+//  どこに旅行したいか尋ねる
+//  惑星に出発する
+// Swiftがどんなオブジェクト指向言語であるかを考察する
+// プログラムが「宇宙冒険の概念」をモデル化するオブジェクトを定義するために、クラスをどのように使用するかを考察する。
+
+
+// TODO: Agenda2
+// 新しいSwiftファイル SpaceAdventure.siwft を追加する
+// メニュー > File > New > File... > macOS > Swift File
+// GalaxyKnowledge グループが選択されていること、ターゲットがチェックされていることを確認する
+// プロジェクトナビゲータを使って、GalaxyKnowledgeグループに新しいファイルがあることを観察する
+
+
+// MARK: Agenda3
+// 単一のクラス定義に、個別のファイルを使用する規則を理解する
+// ファイル名がそこに含まれるGalaxyKnowledgeクラス自体を示唆することを理解する
+// main.swiftで実行することは「GalaxyKnowledgeオブジェクトの生成」と「旅行を開始すること」しかないことを理解する
+
+
+// MARK: Agenda5
+// Xcodeエディタのエラーを観察する
+// GalaxyKnowledge クラスが定義されていないことが原因で、GalaxyKnowledge オブジェクトが生成できないことを理解する
+
+
+// TODO: Agenda6
+// プロジェクトナビゲータで、GalaxyKnowledge.swiftを選択する
+// 基本の構造体定義を実装する
+/*
+ struct GalaxyKnowledge {  
+ }
+*/
+// main.swift に戻る
+// エラーが消えたことを観察する
+
+
+// MARK: Agenda7
+// GalaxyKnowledgeオブジェクトに対してメソッドを呼び出して、プログラムを開始することを理解する
+
+
+// TODO: Agenda9
+// Xcodeエディタのエラーを観察する
+
+
+// MARK: Agenda10
+// GalaxyKnowledgeオブジェクトがsearchメソッドを呼び出せない原因について理解する
+
+
+// TODO: Agenda11
+// GalaxyKnowledge構造体にsearchメソッドのカラ実装を追加する
+// main.swiftに戻って、エラーが消えたことを観察する
+/*
+struct GalaxyKnowledge { 
+    func search() { 
+    }
+}
+*/
+
+
+// MARK: Agenda12
+// なぜ、オブジェクトがsearchメソッド呼び出せるようになったか理解する
+// ただし、メソッド定義が空なので応答はない
+
