@@ -1,7 +1,7 @@
 //
 //  main.swift
 //  Planets
-//  Lesson3
+//  Lesson7
 //  Created by imchino on 2019/07/12.
 //  Copyright © 2019 chino. All rights reserved.
 //
@@ -12,143 +12,89 @@ let galaxyknowledge = GalaxyKnowledge()
 galaxyknowledge.search()
 
 
- 
-// TODO: Agenda1
-// 既存コードをmain.swiftnからGalaxyKnowledgeにあるsearch()の実装部分にカット&ペーストする
+
+// MARK: Agenda1
+// Discuss the need to model a collection of planets, using a PlanetarySystem class.
+
+
+// TODO: Agenda2
+// Add a new Swift file (⌘N) called PlanetarySystem.swift to the project.
+
+// Using the Project Navigator (⌘1), select PlanetarySystem.swift
+// and implement a basic PlanetarySystem class definition.
 /*
- func search() { 
-    let numberOfPlanets = 8 
-    let diameterOfEarth = 24859.82 // In miles, from pole to pole.
-    println("Welcome to our solar system!") 
+ class PlanetarySystem { 
     ...
  }
  */
 
-// TODO: Agenda2
-// プログラムを実行する
-// コンソール対話して、既存機能が損なわれていないことを確認する
 
-
-// MARK: Agenda3
-// main.swiftがgalaxyknowledgeオブジェクトを生成して、開始を指示することを議論する
+// TODO: Agenda3
+// Add a property declaration to the PlanetarySystem class to represent the name of the planetary system.
 /*
- let galaxyknowledge = GalaxyKnowledge()
- galaxyknowledge.search()
- */
- 
-// MARK: Agenda4
-// main.swiftがより簡潔になって、読みやすく表現力が豊かになったかを議論する（コードの抽象化）
-
-
-// MARK: Agenda5
-// search()メソッドは次の３つをどのようにして行うか議論する
-// イントロダクションの出力 → showIntroduction()
-// トラベルする惑星の特定 → determineDestination()
-
-
-// TODO: Agenda6
-// startメソッドの数行を、新しいメソッドshowIntroduction()に取り出す
-/*
- func showIntroduction() {
-     let numberOfPlanets = 8
-     let diameterOfEarth = 12756.274 // In km.
-
-     print("There are \(numberOfPlanets) planets in the sorlar system.")
-     print("Earth has a circumference of \(diameterOfEarth) miles.")
+ class PlanetarySystem { 
+    let name: String 
  }
  */
-    
+
+// MARK: Agenda4
+// Explain the property declaration syntax, emphasizing the type annotation
+// and the use of let to indicate that the name of a PlanetarySystem object, once initialized, will not change.
+
+// Discuss the error that Xcode displays,
+// and discuss what value the name of a PlanetarySystem object would be when instantiated, given the existing class definition.
+
+// Explain how Swift requires that all constant properties be assigned values during instantiation, within the implementation of an initializer.
+
+
+// TODO: Agenda5
+// Add a parameterized initializer to the PlanetarySystem class.
+/*
+ init(name: String) { 
+    self.name = name 
+ }
+ */
+
+
+// MARK: Agenda6
+// Present the concepts of initializers and initialization.
+
+// Explain how the PlanetarySystem initializer expects a String, called name,
+// and assigns the value of the name parameter to the name property, using self to disambiguate the two.
+
+// Discuss how the SpaceAdventure should consist of a PlanetarySystem to travel within,
+// and the need to add a PlanetarySystem property to the SpaceAdventure class.
+
 
 // TODO: Agenda7
-// 抽出したコードをsearch()の開始にあるメソッド呼び出しと置き換える
+// Add the new PlanetarySystem property to the SpaceAdventure class.
 /*
- showIntroduction()
+ class SpaceAdventure {
+    let planetarySystem = PlanetarySystem(name: "Solar System") 
+    ...
  */
 
 
 // MARK: Agenda8
-// search()メソッドが、ユーザ入力のキャプチャとプロンプトのために、printとreadLineをペアで2回使うことを議論する
+// Explain the syntax of instantiating a PlanetarySystem by invoking the parameterized initializer, the named parameter syntax, and how inline assignment of a class property may be used instead of an explicit initializer.
 
+// Discuss the existing implementation of the SpaceAdventure start method.
 
 // TODO: Agenda9
-// responseToPromptという関数に、ユーザ入力キャプチャとプロンプト機能をカプセル化する
+// Update the implementation of displayIntroduction, removing some previous demonstration code,
+// and using the PlanetarySystem name to display the introductory message.
 /*
- func responseTo(_ prompt: String) -> String? {
-     print(prompt)
-     return readLine()
+ private func displayIntroduction() { 
+    let numberOfPlanets = 8 
+    println("Welcome to the \(planetarySystem.name)!") 
+    println("There are \(numberOfPlanets) planets to explore.") 
  }
-*/
-
-
-// TODO: Agenda10
-// search()のコード内で関連する行を新しいresponseTo(_:)関数を使うように置き換える
-/*
-  struct GalaxyKnowledge {
-      func search() {
-          showIntroduction()
-          print("Let's learn about the planet.")
-
-          var isRandomlySelected: String?
-          var isInvalidInput: Bool {
-              return !(isRandomlySelected == "Y" || isRandomlySelected == "N")
-          }
-
-          while isInvalidInput {
-              isRandomlySelected = responseTo("Shall I randomly select a planet to search? (Y or N)")
-              if isRandomlySelected! == "Y" { ...
  */
 
+// MARK: Agenda10
+// Discuss how name is a property of a PlanetarySystem object,
+// and how planetarySystem is a property of a SpaceAdventure object.
 
 // TODO: Agenda11
-// search()に残っているコードを新しいdetermineDestinationメソッドに取り出す
-/*
- func determinePlanet() {
-    var isRandomlySelected: String?
-    var isInvalidInput: Bool {
-        return !(isRandomlySelected == "Y" || isRandomlySelected == "N")
-    }
-
-    while isInvalidInput {
-        isRandomlySelected = responseTo("Shall I randomly select a planet to search? (Y or N)")
-        if isRandomlySelected! == "Y" {
-            print("OK! Searching for...")
-            // TOOD: travel to random planet 
-        } else if isRandomlySelected! == "N" {
-            print("OK, Tell the planet you would like to know....")
-            // TODO: let the user select a planet to visit 
-        } else {
-            print("Please input Y or N, again.")
-        }
-    }
-}
- */
-
-
-// TODO: Agenda12
-// search()メソッドを更新して、新しいdetermineDestinationメソッドを呼び出す
-/*
- struct GalaxyKnowledge {
-     func search() {
-         showIntroduction()
-         print("Let's learn about the planet.")
-         determinePlanet()
-     }
- }
- */
-
-
-// TODO: Agenda
-// displayIntroduction(), determineDestination(), responseTo(_:) がsearch()メソッドからのみ、呼び出されることを議論する
-// privateの印付けして、同じファイル内から呼び出せるようにする
-/*
- private func responseTo(_:) {...}
- private func displayIntroduction() {...}
- private func determineDestination() {...}
- */
-
-
-// TODO: Agenda
-// プログラムを実行する
-// コンソールを観察して、機能的に変わっていないことを確認する
-// search()メソッドがより読みやすく、意図が明確でシンプルになったかどうかを確認する
-
+// Run the program (⌘R),
+// and observe how the console (⇧⌘C) output reflects the name of the planetary system.
