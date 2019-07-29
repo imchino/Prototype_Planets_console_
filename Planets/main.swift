@@ -13,42 +13,29 @@ galaxyknowledge.search()
 
 
 
-// MARK: Agenda1
-// Discuss the need to model a collection of planets, using a PlanetarySystem class.
-
-
 // TODO: Agenda2
-// Add a new Swift file (⌘N) called PlanetarySystem.swift to the project.
-
-// Using the Project Navigator (⌘1), select PlanetarySystem.swift
-// and implement a basic PlanetarySystem class definition.
+// PlanetarySystem.swiftという名前の新しいSwiftファイルをプロジェクトに追加する
+// プロジェクトナビゲータでPlantarySytem.swiftを選択する
+// 基礎のPlanetarySystem構造体の定義を実装する
 /*
- class PlanetarySystem { 
-    ...
+ struct PlanetarySystem {
+     // do something...
  }
  */
 
 
 // TODO: Agenda3
 // Add a property declaration to the PlanetarySystem class to represent the name of the planetary system.
+// PyanetarySystem構造体に、惑星系の名前を表現するプロパティ定義を追加する
 /*
- class PlanetarySystem { 
-    let name: String 
+ struct PlanetarySystem {
+     let name: String
  }
  */
 
-// MARK: Agenda4
-// Explain the property declaration syntax, emphasizing the type annotation
-// and the use of let to indicate that the name of a PlanetarySystem object, once initialized, will not change.
-
-// Discuss the error that Xcode displays,
-// and discuss what value the name of a PlanetarySystem object would be when instantiated, given the existing class definition.
-
-// Explain how Swift requires that all constant properties be assigned values during instantiation, within the implementation of an initializer.
-
 
 // TODO: Agenda5
-// Add a parameterized initializer to the PlanetarySystem class.
+// PlanetarySystemクラスにパラメータ付きイニシャライザを追加する ← 構造体なので不要
 /*
  init(name: String) { 
     self.name = name 
@@ -56,45 +43,30 @@ galaxyknowledge.search()
  */
 
 
-// MARK: Agenda6
-// Present the concepts of initializers and initialization.
-
-// Explain how the PlanetarySystem initializer expects a String, called name,
-// and assigns the value of the name parameter to the name property, using self to disambiguate the two.
-
-// Discuss how the SpaceAdventure should consist of a PlanetarySystem to travel within,
-// and the need to add a PlanetarySystem property to the SpaceAdventure class.
-
-
 // TODO: Agenda7
-// Add the new PlanetarySystem property to the SpaceAdventure class.
+// GalaxyKnowledgeクラスに新しいPlantarySystemプロパティを追加する
 /*
- class SpaceAdventure {
-    let planetarySystem = PlanetarySystem(name: "Solar System") 
-    ...
+ struct GalaxyKnowledge {
+     let planetarySystem = PlanetarySystem(name: "Solar System")
+     ...
  */
 
 
-// MARK: Agenda8
-// Explain the syntax of instantiating a PlanetarySystem by invoking the parameterized initializer, the named parameter syntax, and how inline assignment of a class property may be used instead of an explicit initializer.
-
-// Discuss the existing implementation of the SpaceAdventure start method.
-
 // TODO: Agenda9
-// Update the implementation of displayIntroduction, removing some previous demonstration code,
-// and using the PlanetarySystem name to display the introductory message.
+// showIntroduction()メソッドの実装を更新し、以前のデモコードを削除する
+// PlanetarySystem.nameを使用して紹介メッセージを表示します。
 /*
- private func displayIntroduction() { 
-    let numberOfPlanets = 8 
-    println("Welcome to the \(planetarySystem.name)!") 
-    println("There are \(numberOfPlanets) planets to explore.") 
+ private func showIntroduction() {
+     let numberOfPlanets = 8
+     let diameterOfEarth = 12756.274 // In km.
+
+     print("This is planets App.")
+     print("There are \(numberOfPlanets) planets in the \(planetarySystem.name).")
+     print("Earth has a circumference of \(diameterOfEarth) miles.")
  }
  */
 
-// MARK: Agenda10
-// Discuss how name is a property of a PlanetarySystem object,
-// and how planetarySystem is a property of a SpaceAdventure object.
 
 // TODO: Agenda11
-// Run the program (⌘R),
-// and observe how the console (⇧⌘C) output reflects the name of the planetary system.
+// プログラムを実行する
+// コンソールが惑星系の名前を反映しているかを観察する
