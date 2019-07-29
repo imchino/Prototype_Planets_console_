@@ -12,61 +12,37 @@ let galaxyknowledge = GalaxyKnowledge()
 galaxyknowledge.search()
 
 
-
-// TODO: Agenda2
-// PlanetarySystem.swiftという名前の新しいSwiftファイルをプロジェクトに追加する
-// プロジェクトナビゲータでPlantarySytem.swiftを選択する
-// 基礎のPlanetarySystem構造体の定義を実装する
+// Discuss how all planetary systems have a collection of planets, and how one might represent a collection of planets as a property of a PlanetarySystem.
+//• Discuss how an array can be used to contain an ordered collection of objects.
+//• Explain the concept of Swift arrays and collection types.
+//• Add a new property to the PlanetarySystem class for an array of Planet objects.
+//   let planets: [Planet]
+//• Explain the components of the property declaration, emphasizing the type annotation with brackets for Swift arrays.
+//• Discuss the Xcode error, and how the array has a type of[Planet] but no Planet class yet exists.
+//• Add a new Swift file (⌘N) called Planet.swift, observe that the Project Navigator (⌘1) displays the new file within the SpaceAdventure group, and implement a basic Planet class definition.
+//class Planet {   
+//}
+//• Using the Project Navigator (⌘1), select PlanetarySystem.swift.
+//• Discuss how the original error has disappeared, and discuss the presence of a new error.
+//• Discuss why the new planets array property, declared as a constant, must be assigned a value in the initializer.
+//• Update the PlanetarySystem initializer to expect a [Planet] array to initialize the planets property.
 /*
- struct PlanetarySystem {
-     // do something...
- }
+init(name: String, planets: [Planet]) {  self.name = name 
+self.planets = planets 
+}
  */
-
-
-// TODO: Agenda3
-// Add a property declaration to the PlanetarySystem class to represent the name of the planetary system.
-// PyanetarySystem構造体に、惑星系の名前を表現するプロパティ定義を追加する
-/*
- struct PlanetarySystem {
-     let name: String
- }
- */
-
-
-// TODO: Agenda5
-// PlanetarySystemクラスにパラメータ付きイニシャライザを追加する ← 構造体なので不要
-/*
- init(name: String) { 
-    self.name = name 
- }
- */
-
-
-// TODO: Agenda7
-// GalaxyKnowledgeクラスに新しいPlantarySystemプロパティを追加する
-/*
- struct GalaxyKnowledge {
-     let planetarySystem = PlanetarySystem(name: "Solar System")
-     ...
- */
-
-
-// TODO: Agenda9
-// showIntroduction()メソッドの実装を更新し、以前のデモコードを削除する
-// PlanetarySystem.nameを使用して紹介メッセージを表示します。
-/*
- private func showIntroduction() {
-     let numberOfPlanets = 8
-     let diameterOfEarth = 12756.274 // In km.
-
-     print("This is planets App.")
-     print("There are \(numberOfPlanets) planets in the \(planetarySystem.name).")
-     print("Earth has a circumference of \(diameterOfEarth) miles.")
- }
- */
-
-
-// TODO: Agenda11
-// プログラムを実行する
-// コンソールが惑星系の名前を反映しているかを観察する
+//• Discuss the named parameter syntax and the [Planet] array type annotation.
+//• Using the Project Navigator (⌘1), select SpaceAdventure.swift, and observe the errors in the
+//editor.
+//• Discuss how the instantiation of the PlanetarySystem object must now match the expectations of the updated initializer.
+//• Update the initialization of the planetarySystem property.
+//let planetarySystem = PlanetarySystem(name: "Solar System", 
+//      planets: [Planet]())
+//• Explain the array initializer syntax, and how the anonymous array is passed as an argument to the PlanetarySystem initializer.
+//• Discuss how one might use the size of a PlanetarySystem planets property to determine how many planets there are to explore in displayIntroduction.
+//• Using the Xcode Documentation and API Reference (⇧⌘0), explore the Swift Standard Library documentation for the Array count property.
+//• Update the implementation of displayIntroduction to use the PlanetarySystem planets property to determine the number of available planets to explore.
+//private func displayIntroduction() { 
+//println("Welcome to the \(planetarySystem.name)!")  println("There are \(planetarySystem.planets.count) planets to 
+//explore.")  }
+//• Run the program (⌘R), and observe the console (⇧⌘C) output of "0 planets to explore."
