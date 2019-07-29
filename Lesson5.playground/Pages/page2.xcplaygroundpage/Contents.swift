@@ -5,10 +5,22 @@
  private
  */
 /*:
- 鍵を掛けられる家を表現するデータ型
+ 鍵を掛けられる部屋を表現するデータ型
+ プロパティに初期値を与えておくと...
  
  ````
- struct House {
+ struct Room {
+     var isLock = true
+ }
+
+ let room = Room()
+ ````
+ デフォルトイニシャライザが自動的に使えるようになっている
+ */
+/*:
+ 
+ ````
+ struct Room {
     var isLock = true
 
     func open() {
@@ -20,26 +32,27 @@
     }
  }
 
- var myHouse = House()
- myHouse.open()
- myHouse.isLock
- ````
+ var room = Room()
+ room.open()
+ room.isLock
+
  */
+
 /*:
  ### Access Control: private
  isLockプロパティを外部から操作できるとセキュリティリスク
  privateキーワードを使って、隠蔽する
  
  ````
- struct House {
+ struct Room {
     private var isLock = true
 
     func open() {...}
  }
  
- var myHouse = House()
- myHouse.open()
- myHouse.isLock     // Cannot access
+ var room = Room()
+ room.open()
+ room.isLock     // Cannot access
  ````
  アクセス制御は他に...
  - public
@@ -52,7 +65,7 @@
  パスコードを入力させてisLockを操作するメソッドを定義する
  
  ````
- struct House {
+ struct Room {
     private var isLock = true
     let correctCode = 1234
 
@@ -73,7 +86,7 @@
  `isLock = !isLock` は `isLock.toggle()` と記述すると、リーダブルになる
  
  ````
- struct House {
+ struct Room {
     private var isLock = true
     let correctCode = 1234
 
@@ -82,12 +95,12 @@
     mutating func unlockWith(passcode number: Int) {...}
  }
  
- myHouse.open()                     // print `Door is locked...`
- myHouse.unlockWith(passcode: 1234) // print `Passcode is correct!`
- myHouse.open()                     // print `Door is open!`
+ room.open()                     // print `Door is locked...`
+ room.unlockWith(passcode: 1234) // print `Passcode is correct!`
+ room.open()                     // print `Door is open!`
  ````
  */
-struct House {
+struct Room {
     private var isLock = true
     let correctCode = 1234
 
@@ -109,10 +122,10 @@ struct House {
     }
 }
 
-var myHouse = House()
-myHouse.open()
-myHouse.unlockWith(passcode: 1234)
-myHouse.open()
+var room = Room()
+room.open()
+room.unlockWith(passcode: 1234)
+room.open()
 
 
 //: [Next](@next)
