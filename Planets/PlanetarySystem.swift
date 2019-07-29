@@ -8,6 +8,9 @@
 
 import Foundation
 
-struct PlanetarySystem {
+struct PlanetarySystem: CustomStringConvertible {
     let name: String
+    var description: String {
+        self.name
+    }
 }
