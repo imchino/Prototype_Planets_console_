@@ -28,6 +28,7 @@
 /* Begin PBXFileReference section */
 		A40D238622F172D0003AFBEE /* Planet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
 		A40D238822F1852B003AFBEE /* Lesson9.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Lesson9.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		A40D238922F18BDF003AFBEE /* Lesson10.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Lesson10.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		A422944F22DCBC7400B6AFAE /* Lesson3.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Lesson3.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		A435EC1222EEB287004A1AB8 /* PlanetarySystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetarySystem.swift; sourceTree = "<group>"; };
 		A4492BED22DACFE100848AEA /* Lesson2.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Lesson2.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -67,6 +68,7 @@
 				A4B24BC922ECAB2C00BE8D2A /* Lesson7.playground */,
 				A4DA934422EEBEE800F45659 /* Lesson8.playground */,
 				A40D238822F1852B003AFBEE /* Lesson9.playground */,
+				A40D238922F18BDF003AFBEE /* Lesson10.playground */,
 			);
 			sourceTree = "<group>";
 		};
