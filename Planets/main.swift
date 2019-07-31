@@ -1,7 +1,7 @@
 //
 //  main.swift
 //  Planets
-//  Lesson7
+//  Lesson8
 //  Created by imchino on 2019/07/12.
 //  Copyright © 2019 chino. All rights reserved.
 //
@@ -12,37 +12,79 @@ let galaxyknowledge = GalaxyKnowledge()
 galaxyknowledge.search()
 
 
-// Discuss how all planetary systems have a collection of planets, and how one might represent a collection of planets as a property of a PlanetarySystem.
-//• Discuss how an array can be used to contain an ordered collection of objects.
-//• Explain the concept of Swift arrays and collection types.
-//• Add a new property to the PlanetarySystem class for an array of Planet objects.
-//   let planets: [Planet]
-//• Explain the components of the property declaration, emphasizing the type annotation with brackets for Swift arrays.
-//• Discuss the Xcode error, and how the array has a type of[Planet] but no Planet class yet exists.
-//• Add a new Swift file (⌘N) called Planet.swift, observe that the Project Navigator (⌘1) displays the new file within the SpaceAdventure group, and implement a basic Planet class definition.
-//class Planet {   
-//}
-//• Using the Project Navigator (⌘1), select PlanetarySystem.swift.
-//• Discuss how the original error has disappeared, and discuss the presence of a new error.
-//• Discuss why the new planets array property, declared as a constant, must be assigned a value in the initializer.
-//• Update the PlanetarySystem initializer to expect a [Planet] array to initialize the planets property.
+// MARK: Agenda1
+// すべての惑星系に、どんな惑星のコレクションがあるかを理解する
+// PlanetarySystemのプロパティとして、惑星のコレクションを表現することを理解する
+
+// MARK: Agenda5
+// エラーが消えたこと、新しいエラーが表示されることを確認する
+// 新しいplanets配列プロパティが、定数として定義されること、イニシャライザで値を代入する必要があることを理解する
+
+// MARK: Agenda7
+// 名前付きパラメータ構文と[Planet]配列型アノテーションを理解する
+
+// MARK: Agenda8
+// PlanetarySystemオブジェクトのインスタンス化を、イニシャライザの更新と合わせる必要ができたことを理解する
+
+// MARK: Agenda10
+// 匿名配列はPlanetarySystemイニシャライザに引数をどのように渡すかを理解する
+// 「ディスプレイの紹介」で、「探索する惑星の数を決定する」ために惑星系の惑星のサイズをどう使用するのかについて説明します。
+
+
+
+
+// TODO: Agenda2
+// Planetオブジェクトの配列のために、PlanetarySystem型に新しいプロパティを追加する
+// Xcodeエラーと配列は[Planet]型であるが、Planet型が存在しないことを説明する
 /*
-init(name: String, planets: [Planet]) {  self.name = name 
-self.planets = planets 
-}
+ let planets: [Planet]
  */
-//• Discuss the named parameter syntax and the [Planet] array type annotation.
-//• Using the Project Navigator (⌘1), select SpaceAdventure.swift, and observe the errors in the
-//editor.
-//• Discuss how the instantiation of the PlanetarySystem object must now match the expectations of the updated initializer.
-//• Update the initialization of the planetarySystem property.
-//let planetarySystem = PlanetarySystem(name: "Solar System", 
-//      planets: [Planet]())
-//• Explain the array initializer syntax, and how the anonymous array is passed as an argument to the PlanetarySystem initializer.
-//• Discuss how one might use the size of a PlanetarySystem planets property to determine how many planets there are to explore in displayIntroduction.
-//• Using the Xcode Documentation and API Reference (⇧⌘0), explore the Swift Standard Library documentation for the Array count property.
-//• Update the implementation of displayIntroduction to use the PlanetarySystem planets property to determine the number of available planets to explore.
-//private func displayIntroduction() { 
-//println("Welcome to the \(planetarySystem.name)!")  println("There are \(planetarySystem.planets.count) planets to 
-//explore.")  }
-//• Run the program (⌘R), and observe the console (⇧⌘C) output of "0 planets to explore."
+
+
+// TODO: Agenda4
+// 新しいPlanet.swiftファイルを追加する
+// プロジェクトナビゲータで、Planetsフォルダのグループに新しいファイルがあることを確認する
+// Planet型の基本定義を実装する
+/*
+ struct Planet {
+    ...
+ }
+ */
+
+
+// TODO: Agenda6
+// プロジェクトナビゲータで、PlanetarySystem.swiftを選択する
+// PlanetarySystemイニシャライザを更新して、[Planet]配列を初期化できるようにします。
+// → 構造体の場合、デフォルトイニシャライザは自動で追加される
+/*
+ init(name: String, planets: [Planet]) {
+    self.name = name
+    self.planets = planets
+ }
+ */
+
+
+// TODO: Agenda
+// プロジェクトナビゲータで、GalaxyKnowledge.swiftを選択する
+// エディタ上のエラーを確認する
+// planetarySystemプロパティの初期化を更新する（Fix error）
+/*
+ let planetarySystem = PlanetarySystem(name: "Solar System", planets: [Planet]())
+ */
+
+
+// TODO: Agenda12
+// showIntroductionの実装を更新して、PlanetarySystem.planetプロパティで探索可能なplanetsの数を特定する
+/*
+ private func showIntroduction() {
+    let numberOfPlanets = 8    // Delete this code.
+    ...
+    print("Welcome to the \(planetarySystem)!")
+    print("There are \(planetarySystem.planets.count) planets to explore.")
+ }
+ */
+
+
+// TODO: Agenda13
+// プログラムを実行する
+// コンソールが"0 planets to explore"を出力することを観察する

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A40D238722F172D0003AFBEE /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40D238622F172D0003AFBEE /* Planet.swift */; };
 		A435EC1322EEB287004A1AB8 /* PlanetarySystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A435EC1222EEB287004A1AB8 /* PlanetarySystem.swift */; };
 		A4520FAE22DF1CF7009D0D77 /* GaraxyKnowledge.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4520FAD22DF1CF7009D0D77 /* GaraxyKnowledge.swift */; };
 		A47C91F022D8A21300D9B3F2 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47C91EF22D8A21300D9B3F2 /* main.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A40D238622F172D0003AFBEE /* Planet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
 		A422944F22DCBC7400B6AFAE /* Lesson3.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Lesson3.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		A435EC1222EEB287004A1AB8 /* PlanetarySystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetarySystem.swift; sourceTree = "<group>"; };
 		A4492BED22DACFE100848AEA /* Lesson2.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Lesson2.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -78,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				A47C91EF22D8A21300D9B3F2 /* main.swift */,
+				A40D238622F172D0003AFBEE /* Planet.swift */,
 				A435EC1222EEB287004A1AB8 /* PlanetarySystem.swift */,
 				A4520FAD22DF1CF7009D0D77 /* GaraxyKnowledge.swift */,
 			);
@@ -145,6 +148,7 @@
 				A435EC1322EEB287004A1AB8 /* PlanetarySystem.swift in Sources */,
 				A4520FAE22DF1CF7009D0D77 /* GaraxyKnowledge.swift in Sources */,
 				A47C91F022D8A21300D9B3F2 /* main.swift in Sources */,
+				A40D238722F172D0003AFBEE /* Planet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

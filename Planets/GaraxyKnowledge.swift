@@ -9,7 +9,7 @@
 import Foundation
 
 struct GalaxyKnowledge {
-    let planetarySystem = PlanetarySystem(name: "Solar System")
+    let planetarySystem = PlanetarySystem(name: "Solar System", planets: [Planet]())
     
     func search() {
         showIntroduction()
@@ -23,11 +23,10 @@ struct GalaxyKnowledge {
     }
 
     private func showIntroduction() {
-        let numberOfPlanets = 8
         let diameterOfEarth = 12756.274 // In km.
 
         print("This is planets App.")
-        print("There are \(numberOfPlanets) planets in the \(planetarySystem.name).")
+        print("There are \(planetarySystem.planets.count) planets in the \(planetarySystem).")
         print("Earth has a circumference of \(diameterOfEarth) miles.")
     }
 
