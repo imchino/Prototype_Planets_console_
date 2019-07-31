@@ -13,6 +13,5 @@ struct PlanetarySystem: CustomStringConvertible {
     var description: String {
         self.name
     }
-    let planets: [Planet]
-    
+    var planets: [Planet]
 }

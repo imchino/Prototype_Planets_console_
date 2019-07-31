@@ -9,7 +9,13 @@
 import Foundation
 
 struct GalaxyKnowledge {
-    let planetarySystem = PlanetarySystem(name: "Solar System", planets: [Planet]())
+    var planetarySystem = PlanetarySystem(name: "Solar System", planets: [Planet]())
+    
+    init() {
+       let mercury = Planet(name: "Mercury", description: "A very hotplanet, closest to thesun.")
+       planetarySystem.planets.append(mercury)
+    }
+
     
     func search() {
         showIntroduction()

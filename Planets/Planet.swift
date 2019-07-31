@@ -9,5 +9,6 @@
 import Foundation
 
 struct Planet {
-    
+    let name: String
+    let description: String
 }
