@@ -12,28 +12,35 @@ let galaxyknowledge = GalaxyKnowledge()
 galaxyknowledge.search()
 
 
-//
+
+
+
+// TODO: Agenda
 // GalaxyKnowledgeイニシャライザで、明示的に8つの惑星オブジェクトをインスタンス化し、それぞれをplanets配列に追加する
 /*
  init() {
-    let mercury = Planet(name: "Mercury", description: "Closest to the sun.")
-    let venus   = Planet(name: "Venus",   description: "It's very cloudy here!")
-    let earth   = Planet(name: "Earth",   description: "There is something very familiar about this planet.")
-    let mars    = Planet(name: "Mars",    description: "Known as the red planet.")
-    let jupter  = Planet(name: "Jupiter", description: "A gas giant, with a noticeable red spot.")
-    let saturn  = Planet(name: "Saturn",  description: "This planet has beautiful rings around it.")
-    let uranus  = Planet(name: "Uranus",  description: "Strangely, this planet rotates around on its side.")
-    let neptune = Planet(name: "Neptune", description: "Furthest to the sun.")
+     let mercury = Planet(name: "Mercury", description: "Closest to the sun.")
+     let venus   = Planet(name: "Venus",   description: "It's very cloudy here!")
+     let earth   = Planet(name: "Earth",   description: "There is something very familiar about this planet.")
+     let mars    = Planet(name: "Mars",    description: "Known as the red planet.")
+     let jupter  = Planet(name: "Jupiter", description: "A gas giant, with a noticeable red spot.")
+     let saturn  = Planet(name: "Saturn",  description: "This planet has beautiful rings around it.")
+     let uranus  = Planet(name: "Uranus",  description: "Strangely, this planet rotates around on its side.")
+     let neptune = Planet(name: "Neptune", description: "Furthest to the sun.")
 
-    planetarySystem.planets.append(mercury)
-    .
-    .
-    .
-    planetarySystem.planets.append(neptune)
+     planetarySystem.planets.append(mercury)
+     planetarySystem.planets.append(venus)
+     planetarySystem.planets.append(earth)
+     planetarySystem.planets.append(mars)
+     planetarySystem.planets.append(jupter)
+     planetarySystem.planets.append(saturn)
+     planetarySystem.planets.append(uranus)
+     planetarySystem.planets.append(neptune)
  }
 */
 
 
+// TODO: Agenda
 // イニシャライザで繰り返されるコードについて理解し、後でこのイニシャライザを改善・リファクタリングすることを念頭にいれる
 // TODOコメントをイニシャライザのボディに追加する
 /*
@@ -41,85 +48,62 @@ galaxyknowledge.search()
  */
 
 
+// TODO: Agenda
 // プログラムを実行する
 // コンソールに "there are 8 planets to explore." が表示されることを観察する
 
 
+// MARK: Agenda
+// GalaxyKnowledge型で、特定された惑星の実装におけるifステートメントを検討する
 
-// Examine the if statement in the implementation of determineDestination within the GalaxyKnowledge class.
 
-
-// Replace the TODO and print call with a prompt to capture a planet's name that the user will type,
-// and a call to a private visit(planetName:) method.
+// TODO: Agenda
+// TODOとprint呼び出しを、ユーザ入力の惑星名をキャプチャするプロンプトと置き換える
+// visit(:)プライベートメソッドを呼び出す
 /*
  ...
- } else if decision == "N" {
-    let planetName = responseToPrompt("Ok, name the planet you would like to visit.")
-    visit(planetName)
+ } else if isRandomlySelected! == "N" {
+    // TODO: let the user select a planet to visit 
+    let planetName = responseTo("OK, Tell the planet you would like to know....")
+    lookup(planetName)
  } else {
-    ...
+ ...
  */
 
 
-// Implement a simple version of the visit(planetName:) method.
+// TODO: Agenda
+// シンプルにlookup(_:)メソッドを実装する
 /*
- private func visit(planetName: String) {
-    print("Traveling to \(planetName)...")
+ private func lookup(_ planetName: String?) {
+    print("Looking up the \(planetName!) in GaraxyKnowledge...")
  }
  */
 
 
-// Explain the method definition syntax, emphasizing the parameter name and type annotation.
-// Discuss how one might print the description of the Planet in the planetarySystem.planets array whose name matches the value of planetName.
-// Discuss the drawbacks of using a long, explicit if statement, such as if planetName == "Mercury".
+// planetName値と名前がマッチするplanetSystem.planets配列の惑星のdesctiptionを出力する方法を理解する
+// if planetName == "Mercury"のように、冗長かつ明示的なif文を使用する欠点について説明する
 
-// Complete an implementation of visit: that uses a traditional for loop.
+
+// TODO: Agenda
+// for-inループを使ったlookup(_:)メソッドの実装を完成する
 /*
- private func visit(planetName: String) {
-    print("Traveling to \(planetName)...")
-    for var i = 0; i < planetarySystem.planets.count; ++i {
-        let planet = planetarySystem.planets[i]
-        if planetName == planet.name {
-            print("Arrived at \(planet.name). \(planet.description)")
-        }
-    }
- }
- */
-
-// Explain the traditional for loop syntax.
-// Discuss the the idiom of array subscripting using a for loop counter variable.
-
-
-// Run the program (⌘R),
-// enter a name, choose N, type a valid planet name,
-// and observe the results displayed in the console (⇧⌘C).
-
-
-// Discuss the first two lines of the for loop.
-/*
- for var i = 0; i < planetarySystem.planets.count; ++i {
-    let planet = planetarySystem.planets[i]
- */
-
-
-// Discuss how the loop iterates over each item in the array by using the counter variable to retrieve a Planet object out of the array, assigning the object to a planet constant.
-
-
-// Replace the traditional for loop with a for-in loop.
-/*
- for planet in planetarySystem.planets {
-    if planetName == planet.name {
-        print("Arrived at \(planet.name). \(planet.description)")
-    }
+ private func lookup(_ planetName: String?) {
+     if let planetName = planetName {
+         print("Looking up the \(planetName) in GaraxyKnowledge...")
+         for planet in planetarySystem.planets {
+             if planetName == planet.name {
+                 print("Result: \(planet.description)")
+             }
+         }
+     }
  }
  */
 
 
-// Discuss how the for-in loop manages the iteration,
-// assigning each Planet object to the implicit planet constant during each repetition of the loop.
+// ループ中に、個々のPlanetオブジェクトを暗黙にplanet定数に割り当てることを理解する
 
-// Run the program (⌘R),
-// enter a name, choose N, type a planet name,
-// and observe the results displayed in the console (⇧⌘C).
 
+// プログラムを実行する
+// 名前を入力、Nを選択、有効な惑星名を入力する
+// コンソールに結果が表示されることを観察する
 
