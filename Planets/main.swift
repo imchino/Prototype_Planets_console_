@@ -1,7 +1,7 @@
 //
 //  main.swift
 //  Planets
-//  Lesson10, 11
+//  Lesson12
 //  Created by imchino on 2019/07/12.
 //  Copyright © 2019 chino. All rights reserved.
 //
@@ -13,97 +13,22 @@ galaxyknowledge.search()
 
 
 
-
-
-// TODO: Agenda
-// GalaxyKnowledgeイニシャライザで、明示的に8つの惑星オブジェクトをインスタンス化し、それぞれをplanets配列に追加する
-/*
- init() {
-     let mercury = Planet(name: "Mercury", description: "Closest to the sun.")
-     let venus   = Planet(name: "Venus",   description: "It's very cloudy here!")
-     let earth   = Planet(name: "Earth",   description: "There is something very familiar about this planet.")
-     let mars    = Planet(name: "Mars",    description: "Known as the red planet.")
-     let jupter  = Planet(name: "Jupiter", description: "A gas giant, with a noticeable red spot.")
-     let saturn  = Planet(name: "Saturn",  description: "This planet has beautiful rings around it.")
-     let uranus  = Planet(name: "Uranus",  description: "Strangely, this planet rotates around on its side.")
-     let neptune = Planet(name: "Neptune", description: "Furthest to the sun.")
-
-     planetarySystem.planets.append(mercury)
-     planetarySystem.planets.append(venus)
-     planetarySystem.planets.append(earth)
-     planetarySystem.planets.append(mars)
-     planetarySystem.planets.append(jupter)
-     planetarySystem.planets.append(saturn)
-     planetarySystem.planets.append(uranus)
-     planetarySystem.planets.append(neptune)
- }
-*/
-
-
-// TODO: Agenda
-// イニシャライザで繰り返されるコードについて理解し、後でこのイニシャライザを改善・リファクタリングすることを念頭にいれる
-// TODOコメントをイニシャライザのボディに追加する
-/*
- // TODO: Reduce repetitive code.
- */
-
-
-// TODO: Agenda
-// プログラムを実行する
-// コンソールに "there are 8 planets to explore." が表示されることを観察する
-
-
-// MARK: Agenda
-// GalaxyKnowledge型で、特定された惑星の実装におけるifステートメントを検討する
-
-
-// TODO: Agenda
-// TODOとprint呼び出しを、ユーザ入力の惑星名をキャプチャするプロンプトと置き換える
-// visit(:)プライベートメソッドを呼び出す
-/*
- ...
- } else if isRandomlySelected! == "N" {
-    // TODO: let the user select a planet to visit 
-    let planetName = responseTo("OK, Tell the planet you would like to know....")
-    lookup(planetName)
- } else {
- ...
- */
-
-
-// TODO: Agenda
-// シンプルにlookup(_:)メソッドを実装する
-/*
- private func lookup(_ planetName: String?) {
-    print("Looking up the \(planetName!) in GaraxyKnowledge...")
- }
- */
-
-
-// planetName値と名前がマッチするplanetSystem.planets配列の惑星のdesctiptionを出力する方法を理解する
-// if planetName == "Mercury"のように、冗長かつ明示的なif文を使用する欠点について説明する
-
-
-// TODO: Agenda
-// for-inループを使ったlookup(_:)メソッドの実装を完成する
-/*
- private func lookup(_ planetName: String?) {
-     if let planetName = planetName {
-         print("Looking up the \(planetName) in GaraxyKnowledge...")
-         for planet in planetarySystem.planets {
-             if planetName == planet.name {
-                 print("Result: \(planet.description)")
-             }
-         }
-     }
- }
- */
-
-
-// ループ中に、個々のPlanetオブジェクトを暗黙にplanet定数に割り当てることを理解する
-
-
-// プログラムを実行する
-// 名前を入力、Nを選択、有効な惑星名を入力する
-// コンソールに結果が表示されることを観察する
-
+//• Discuss how one might select a random integer, use that integer to subscript the planetarySystem planets array, and pass the value of the retrieved planet's name property to the existing visit: method.
+//• Using the Xcode Documentation and API Reference (⇧⌘0), investigate the arc4random_uniform function.
+//• In the SpaceAdventure determineDestination method, replace the println call and TODO in the first branch of the if statement with a naive implementation.
+//... 
+//if decision == "Y" { 
+//let upperBound = planetarySystem.planets.count 
+//let index = Int(arc4random_uniform(UInt32(upperBound)))  visit(planetarySystem.planets[index].name) 
+//} else if decision == "N" {  ...
+//• Explain the use of the C function arc4random_uniform to obtain a pseudo-random number between 0 and its argument; the conversion of upperBound to a UInt32 to satisfy the arc4random_uniform parameter type; and the conversion of the return value of arc4random_uniform to an Int, in order to subscript the planets array.
+//• Run the program (⌘ R ), enter a name, choose Y, and observe the results displayed in the console (⇧⌘C).
+//• Discuss what might happen if the planets array is empty.
+//• In the SpaceAdventure initializer, comment out (⌘ / ) the adding of each Planet object to the
+//planets array.
+//
+//init() {  ... 
+//// planetarySystem.planets.append(mercury)  ... 
+//// planetarySystem.planets.append(neptune) 
+//}
+//• Run the program (⌘ R ), enter a name, choose Y, witness the program crash, and observe the "Array index out of range" runtime error displayed in the console (⇧⌘C). Stop the program with a keyboard shortcut (⌘ . ) or the stop button in the Xcode Toolbar.
