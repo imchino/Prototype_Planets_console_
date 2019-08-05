@@ -34,8 +34,10 @@ struct GalaxyKnowledge {
     
     func search() {
         showIntroduction()
-        print("Let's learn about the planet.")
-        determinePlanet()
+        if (!planetarySystem.planets.isEmpty) {
+            print("Let's learn about the planet.")
+            determinePlanet()
+        }
     }
 
     private func responseTo(_ prompt: String) -> String? {
@@ -60,9 +62,12 @@ struct GalaxyKnowledge {
 
         while isInvalidInput {
             isRandomlySelected = responseTo("Shall I randomly select a planet to search? (Y or N)")
+            guard let randomChoosedPlanetName = planetarySystem.randomPlanet?.name else {
+                print("There are no planets in this system...")
+                return
+            }
             if isRandomlySelected! == "Y" {
-                print("OK! Searching for...")
-                // TODO: travel to random planet 
+                lookup(randomChoosedPlanetName)
             } else if isRandomlySelected! == "N" {
                 // TODO: let the user select a planet to visit 
                 let planetName = responseTo("OK, Tell the planet you would like to know....")

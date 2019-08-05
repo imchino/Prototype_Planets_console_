@@ -6,6 +6,7 @@
  */
 
 
+Int.random(in:1..<3)
 
 
 //: [Next](@next)
