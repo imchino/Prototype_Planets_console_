@@ -1,7 +1,7 @@
 //
 //  main.swift
 //  Planets
-//  Lesson12, 13
+//  Lesson14
 //  Created by imchino on 2019/07/12.
 //  Copyright © 2019 chino. All rights reserved.
 //
@@ -11,159 +11,87 @@ import Foundation
 let galaxyknowledge = GalaxyKnowledge()
 galaxyknowledge.search()
 
+// MARK: - Lesson14
+// MARK: Agenda
+// Discuss how the SpaceAdventure initializer includes a significant amount of planet data (names and descriptions) and explicitly relies on creating one kind of PlanetarySystem.
+// Discuss how one might improve the design of the SpaceAdventure class, by providing its initializer with a particular PlanetarySystem to explore; and by extracting the planet data from the existing initializer.
 
 
-// MARK: Agenda1
-// ランダムに整数を選択する方法を理解する
-// ランダム整数を使用して、planetarySystemのplanets配列の添字にする方法を理解する
-// 取得した惑星のnameプロパティの値を既存のlookup(_:)メソッドに渡す方法を理解する
-
-// TODO: Agenda2
-// XcodeドキュメントとAPIリファレンスを使う
-// arc4random_uniform関数を調べる
-
-// TODO: Agenda3
-// GalaxyKnowledge.determinePlanet()メソッドで、Ifステートメントの最初の分岐にあるprint()とTODOを単純な実装と置き換える
+// Update the SpaceAdventure initializer in three steps. First, extract the existing code within the SpaceAdventure initializer, by moving it to the top of main.swift.
 /*
- ...
- if isRandomlySelected! == "Y" {
-     let upperBound = planetarySystem.planets.count  // 8
-     let random = Int.random(in: 0..<upperBound)     // 0~7
-     lookup(planetarySystem.planets[random].name)
- } else if isRandomlySelected! == "N" {
+ import Foundation
+
+ // TODO: Reduce repetitive code
+ let mercury = Planet(name: "Mercury", description: "A very hot planet, closest to the sun.")
+ .
+ .
+ .
+ planetarySystem.planets.append(mercury)
+ .
+ .
+ .
+ let galaxyKnowledge = GalaxyKnowledge()
+ galaxyKnowledge.search()
+ */
+
+
+// Modify the SpaceAdventure planetarySystem property declaration by removing the assignment of the default PlanetarySystem object.
+/*
+ struct SpaceAdventure {
+    let planetarySystem: PlanetarySystem
     ...
  */
 
 
-// MARK: Agenda4
-// 範囲型を理解する
-// Int型のタイプメソッドrandom(in:)を理解する
+// Explain why the planetarySystem property now requires a type annotation, as no value is explicitly assigned to it yet.
 
 
-// TODO: Agenda5
-// プログラムを実行する
-// Yを入力して、ランダムに惑星を選択する
-// コンソールに表示される結果を観察する
-
-
-// MARK: Agenda6
-// planets配列が空の場合、何が起こるか考察する
-// GalaxyKnowledgeイニシャライザで、各Planetオブジェクトのplanets配列への追加をコメントアウト（⌘/）する
+// Update the SpaceAdventure initializer to accept a PlanetarySystem parameter, assigning it to the planetarySystem property.
 /*
- init() {
-    ...
-    // planetarySystem.planets.append(mercury)
-    ...
-    // planetarySystem.planets.append(neptune)
+ init(planetarySystem: PlanetarySystem) {
+    self.planetarySystem = planetarySystem
  }
  */
 
 
-// TODO: Agenda7
-// プログラムを実行する
-// Yを入力して、ランダムに惑星を選択して、プログラムをクラッシュさせる
-// プログラムの実行を停止するために、ショートカットキー(⌘.)またはXcodeツールバーの停止ボタンを押す
+// Explain how the initializer receives a PlanetarySystem object, and assigns it to the planetarySystem property.
 
 
-// MARK: - Lesson13
-// MARK: Agenda1
-// プログラムを改善できる3つの点について
-// PlanetarySystem型にランダムな惑星を提供させることで、カプセル化を改善
-// 無効な配列インデックスの使用を防いで、ランタイムの安全性を向上
-// planets配列にplanetオブジェクトがある場合にのみ、ユーザに惑星へ移動するように促すことによって、ユーザエクスペリエンスを向上
-
-
-// MARK: Agenda3
-// 計算プロパティ構文を理解する
-// 計算プロパティがどのようにオプショナル型の値（アンラップすると、Planetオブジェクトまたはnilになる値）を返すか理解する
-// Swiftのオプショナル概念を理解する
-
-
-// MARK: Agenda5
-// Guard-Letのオプショナルバインディングの仕組みを理解する
-
-
-// MARK: Agenda7
-// プログラムのユーザーエクスペリエンスが、planets配列がカラの時に訪れる惑星がプロンプトするだけで改善されたことを理解する
-
-
-
-
-// TODO: Agenda2
-// XcodeドキュメントとAPIリファレンス(⇧⌘0)で、isEmptyプロパティを調べる
-// PlanetarySystem型にrandomPlanet計算プロパティを追加する
+// Update the implementation of main.swift to prepare an array of Planet objects, create a PlanetarySystem, and then pass the PlanetarySystem object to the SpaceAdventure initializer.
 /*
- struct PlanetarySystem {
-    ...
-    var randomPlanet: Planet? {
-        if planets.isEmpty {
-            return nil
-        } else {
-            let index = Int.random(in: 0..<planets.count)
-            return planets[index]
-        }
-    }
-    ...
+ // TODO: Reduce repetitive code.
+ let mercury = Planet(name: "Mercury", description: "A very hot planet, closest to the sun.")
+ .
+ .
+ .
+ let systemName = "Solar System"
+ var planets = [Planet]()
+ planets.append(mercury)
+ .
+ .
+ .
+ planets.append(neptune)
+ let solarSystem = PlanetarySystem(name: systemName, planets: planets)
+ let galaxyKnowledge = GalaxyKnowledge(planetarySystem: solarSystem)
  */
 
 
-// TODO: Agenda4
-// GalaxyKnowledge.determinePlanet()メソッドで、Ifステートメントの最初の分岐にある実装をオプショナルバインディングに置き換える
-/*
- while isInvalidInput {
-    isRandomlySelected = responseTo("Shall I randomly select a planet to search? (Y or N)")
-    
-    guard let randomChoosedPlanetName = planetarySystem.randomPlanet?.name else {
-         print("There are no planets in this system...")
-         return
-     }
+// Run the program (⌘R) to verify that the functionality remains the same.
 
-    if isRandomlySelected! == "Y" {
-         lookup(randomChoosedPlanetName)
-     } else if isRandomlySelected! == "N" {
+
+// Discuss how the SpaceAdventure class is now decoupled from the "Solar System" PlanetarySystem, and how any PlanetarySystem can be passed to the SpaceAdventure initializer.
+// Discuss how the PlanetarySystem planets array property should no longer be mutable, since a PlanetarySystem initializer should be provided a complete Planet array during initialization.
+
+
+// Update the PlanetarySystem planets property declaration, replacing var with let.
+/*
+ class PlanetarySystem {
+    let name: String
+    let planets: [Planet]
     ...
  */
 
-
-// TODO: Agenda6
-// プログラムを実行する
-// Yを選択
-// コンソールに、"There are no plantes in this sysytem..." と表示されることを確認する
+// Discuss how the Planet data no longer remains buried within the SpaceAdventure class, and allude to how it may be extracted even further, to exist outside the code entirely.
 
 
-// TODO: Agenda8
-// search()メソッドを更新して、determinePlanet()が呼び出される前に、planets配列がカラでないことを確認する
-/*
- func search() {
-     showIntroduction()
-     if (!planetarySystem.planets.isEmpty) {
-         print("Let's learn about the planet.")
-         determinePlanet()
-     }
- }
- */
-
-
-// TODO: Agenda9
-// プログラムを実行する
-// コンソールにプロンプトが表示されないことを確認する
-
-
-// TODO: Agenda10
-// GalaxyKnowledgeイニシャライザで、コメント記号を取り除いて、Planetオブジェクトをplanets配列に追加するように戻す
-/*
- init() {
-    ...
-    planetarySystem.planets.append(mercury)
-    ...
-    planetarySystem.planets.append(neptune)
- }
- */
-
-
-// TODO: Agenda11
-// プログラムを何回か実行して、惑星をランダムに選択する
-// 毎回、違う惑星になることを確認する
-
-
-// MARK: -
+// Run the program (⌘R) to verify that the functionality remains the same.

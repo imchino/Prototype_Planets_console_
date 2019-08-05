@@ -32,6 +32,7 @@
 		A40D238A22F33190003AFBEE /* Lesson12.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Lesson12.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		A422944F22DCBC7400B6AFAE /* Lesson3.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Lesson3.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		A435EC1222EEB287004A1AB8 /* PlanetarySystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetarySystem.swift; sourceTree = "<group>"; };
+		A43E774C22F81E6700579786 /* Lesson14.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Lesson14.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		A4492BED22DACFE100848AEA /* Lesson2.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Lesson2.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		A4520FAC22DDCA40009D0D77 /* Lesson4.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Lesson4.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		A4520FAD22DF1CF7009D0D77 /* GaraxyKnowledge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaraxyKnowledge.swift; sourceTree = "<group>"; };
@@ -71,6 +72,7 @@
 				A40D238822F1852B003AFBEE /* Lesson9.playground */,
 				A40D238922F18BDF003AFBEE /* Lesson10.playground */,
 				A40D238A22F33190003AFBEE /* Lesson12.playground */,
+				A43E774C22F81E6700579786 /* Lesson14.playground */,
 			);
 			sourceTree = "<group>";
 		};
