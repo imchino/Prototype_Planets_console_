@@ -39,6 +39,7 @@
 		A47C91EC22D8A21300D9B3F2 /* Planets */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Planets; sourceTree = BUILT_PRODUCTS_DIR; };
 		A47C91EF22D8A21300D9B3F2 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		A47C91F722D8A5EF00D9B3F2 /* Lesson1.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Lesson1.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		A485558523011ED500FE6E49 /* Lesson15.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Lesson15.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		A4A62F3222E9B1C100571B2B /* Lesson5.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Lesson5.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		A4B24BC922ECAB2C00BE8D2A /* Lesson7.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Lesson7.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		A4DA934422EEBEE800F45659 /* Lesson8.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Lesson8.playground; sourceTree = "<group>"; };
@@ -73,6 +74,7 @@
 				A40D238922F18BDF003AFBEE /* Lesson10.playground */,
 				A40D238A22F33190003AFBEE /* Lesson12.playground */,
 				A43E774C22F81E6700579786 /* Lesson14.playground */,
+				A485558523011ED500FE6E49 /* Lesson15.playground */,
 			);
 			sourceTree = "<group>";
 		};
