@@ -8,16 +8,39 @@
 
 import Foundation
 
-let galaxyknowledge = GalaxyKnowledge()
+// TODO: Reduce repetitive code.
+let mercury = Planet(name: "Mercury", description: "Closest to the sun.")
+let venus   = Planet(name: "Venus",   description: "It's very cloudy here!")
+let earth   = Planet(name: "Earth",   description: "There is something very familiar about this planet.")
+let mars    = Planet(name: "Mars",    description: "Known as the red planet.")
+let jupter  = Planet(name: "Jupiter", description: "A gas giant, with a noticeable red spot.")
+let saturn  = Planet(name: "Saturn",  description: "This planet has beautiful rings around it.")
+let uranus  = Planet(name: "Uranus",  description: "Strangely, this planet rotates around on its side.")
+let neptune = Planet(name: "Neptune", description: "Furthest to the sun.")
+
+let systemName = "Solar System"
+var planets = [Planet]()
+planets.append(mercury)
+planets.append(mercury)
+planets.append(venus)
+planets.append(earth)
+planets.append(mars)
+planets.append(jupter)
+planets.append(saturn)
+planets.append(uranus)
+planets.append(neptune)
+
+let solarSystem = PlanetarySystem(name: systemName, planets: planets)
+let galaxyknowledge = GalaxyKnowledge(planetarySystem: solarSystem)
 galaxyknowledge.search()
 
+
 // MARK: - Lesson14
-// MARK: Agenda
-// Discuss how the SpaceAdventure initializer includes a significant amount of planet data (names and descriptions) and explicitly relies on creating one kind of PlanetarySystem.
-// Discuss how one might improve the design of the SpaceAdventure class, by providing its initializer with a particular PlanetarySystem to explore; and by extracting the planet data from the existing initializer.
 
 
-// Update the SpaceAdventure initializer in three steps. First, extract the existing code within the SpaceAdventure initializer, by moving it to the top of main.swift.
+// TODO: Agenda2
+// GalaxyKnowledgeイニシャライザを三段階で更新する
+// まず、GalaxyKnowledgeイニシャライザにある既存コードをmain.swiftの先頭に移動する（step.1）
 /*
  import Foundation
 
@@ -35,18 +58,17 @@ galaxyknowledge.search()
  */
 
 
-// Modify the SpaceAdventure planetarySystem property declaration by removing the assignment of the default PlanetarySystem object.
+// TODO: Agenda3
+// GalaxyKnowledge.planetarySystemプロパティを修正して、既定のPlanetarySystemオブジェクトの割り当てを削除する（step.2）
 /*
- struct SpaceAdventure {
+ struct GalaxyKnowledge {
     let planetarySystem: PlanetarySystem
     ...
  */
 
 
-// Explain why the planetarySystem property now requires a type annotation, as no value is explicitly assigned to it yet.
-
-
-// Update the SpaceAdventure initializer to accept a PlanetarySystem parameter, assigning it to the planetarySystem property.
+// TODO: Agenda5
+// GalaxyKnowledgeイニシャライザを更新して、PlanetarySystem引数を受け入れて、値を割り当てる（step.3）
 /*
  init(planetarySystem: PlanetarySystem) {
     self.planetarySystem = planetarySystem
@@ -54,10 +76,11 @@ galaxyknowledge.search()
  */
 
 
-// Explain how the initializer receives a PlanetarySystem object, and assigns it to the planetarySystem property.
-
-
-// Update the implementation of main.swift to prepare an array of Planet objects, create a PlanetarySystem, and then pass the PlanetarySystem object to the SpaceAdventure initializer.
+// TODO: Agenda7
+// main.swiftの実装を更新して...
+// Planetオブジェクトの配列を準備
+// PlantarySystemを生成
+// PlantarySytemオブジェクトをGalaxyKnowledgeイニシャライザに渡す
 /*
  // TODO: Reduce repetitive code.
  let mercury = Planet(name: "Mercury", description: "A very hot planet, closest to the sun.")
@@ -76,22 +99,23 @@ galaxyknowledge.search()
  */
 
 
-// Run the program (⌘R) to verify that the functionality remains the same.
+// TODO: Agenda8
+// プログラムを実行する
+// 機能が維持されていることを確認する
 
 
-// Discuss how the SpaceAdventure class is now decoupled from the "Solar System" PlanetarySystem, and how any PlanetarySystem can be passed to the SpaceAdventure initializer.
-// Discuss how the PlanetarySystem planets array property should no longer be mutable, since a PlanetarySystem initializer should be provided a complete Planet array during initialization.
-
-
-// Update the PlanetarySystem planets property declaration, replacing var with let.
+// TODO: Agenda10
+// PlanetarySystem.planets配列の宣言を修正して、varをletに置き換える
 /*
- class PlanetarySystem {
+ struct PlanetarySystem: CustomStringConvertible {
     let name: String
+
+    var description: String { self.name }
     let planets: [Planet]
     ...
  */
 
-// Discuss how the Planet data no longer remains buried within the SpaceAdventure class, and allude to how it may be extracted even further, to exist outside the code entirely.
 
-
-// Run the program (⌘R) to verify that the functionality remains the same.
+// TODO: Agenda
+// プログラムを実行する
+// 機能が維持されていることを確認する
